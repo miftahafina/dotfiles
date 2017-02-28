@@ -1,3 +1,5 @@
+execute pathogen#infect()
+
 " Be improved
 set nocompatible
 
