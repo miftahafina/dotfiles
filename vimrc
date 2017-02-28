@@ -37,7 +37,13 @@ autocmd BufWritePre * :%s/\s\+$//e
 set hlsearch
 nnoremap <F3> :set hlsearch!<CR>
 
+" Navigation
+set mouse=a
+
 " Re-open
 nnoremap <Leader><Leader> :e#<CR>
 
-
+" Plugins
+let g:lightline = { 'colorscheme': 'wombat' }
+set laststatus=2
+set noshowmode
