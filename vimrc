@@ -49,6 +49,7 @@ set foldlevelstart=10
 set foldnestmax=10
 set foldmethod=indent
 nnoremap <space> za
+" kenapa spasi dan w bisa ya?
 
 " Movement
 set scrolloff=7
@@ -56,23 +57,38 @@ set scrolloff=7
 " Navigation
 set mouse=a
 
-" Buffers
+" Buffer
 map <C-k> :bnext<CR>
-map <C-j> :bprevious:<CR>
-
+map <C-j> :bprevious<CR>
+map <C-w> :bdelete<CR>
+map <C-q> :q<CR>
+map <C-Q> :q!<CR>
 
 " Re-open
 nnoremap <Leader><Leader> :e#<CR>
 
 " Plugins
-let g:lightline = { 'colorscheme': 'wombat' }
 set laststatus=2
 set noshowmode
+
+" Lightline
+let g:lightline = {
+  \ 'colorscheme': 'wombat',
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste' ], [ 'filename' ], [ 'bufferline' ] ],
+  \ },
+  \ 'component': {
+  \   'bufferline': '%{bufferline#refresh_status()}%{g:bufferline_status_info.before . g:bufferline_status_info.current . g:bufferline_status_info.after}'
+  \ }
+  \ }
+
+" Bufferline
+let g:bufferline_echo = 0
+
 
 " Shortcuts
 map <C-s> :write<CR>
 map <C-\> :NERDTreeToggle<CR>
-map <C-w> :quit<CR>
 cnoremap Q q
 
 " Backup
