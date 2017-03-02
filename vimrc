@@ -14,6 +14,7 @@ set number
 set norelativenumber
 set showmatch
 set wildmenu
+set cursorline
 
 " Key mapping
 let mapleader=" "
@@ -52,7 +53,7 @@ nnoremap <space> za
 " kenapa spasi dan w bisa ya?
 
 " Movement
-set scrolloff=7
+set scrolloff=5
 
 " Navigation
 set mouse=a
@@ -75,16 +76,22 @@ set noshowmode
 let g:lightline = {
   \ 'colorscheme': 'wombat',
   \ 'active': {
-  \   'left': [ [ 'mode', 'paste' ], [ 'filename' ], [ 'bufferline' ] ],
+  \   'left': [ [ 'mode', 'paste' ], [ 'fugitive' ], [ 'bufferline' ] ],
   \ },
   \ 'component': {
+  \   'fugitive': '%{fugitive#statusline()}',
   \   'bufferline': '%{bufferline#refresh_status()}%{g:bufferline_status_info.before . g:bufferline_status_info.current . g:bufferline_status_info.after}'
   \ }
-  \ }
+\ }
 
 " Bufferline
 let g:bufferline_echo = 0
 
+" Syntastic
+let g:syntastic_mode_map = {
+  \ "mode": "passive",
+  \ "active_filetypes": ["php", "Ruby"],
+  \ "passive_filetypes": ["puppet"] }
 
 " Shortcuts
 map <C-s> :write<CR>
