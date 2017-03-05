@@ -8,11 +8,12 @@ filetype on
 syntax on
 colorscheme Tomorrow-Night
 set guifont=Menlo\ Regular:h18
-set lines=35 columns=100
+" set lines=35 columns=100
 set colorcolumn=90
 set number
 set norelativenumber
 set showmatch
+set wildmode=longest,list,full
 set wildmenu
 set cursorline
 
@@ -26,12 +27,16 @@ set history=100
 
 " Indentation
 filetype indent on
-set nowrap
 set tabstop=2
 set shiftwidth=2
 set expandtab
 set smartindent
 set autoindent
+
+" Wrapping
+set wrap
+set linebreak
+set nolist
 
 " Remove whitespaces on save
 autocmd BufWritePre * :%s/\s\+$//e
