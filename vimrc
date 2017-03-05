@@ -105,3 +105,6 @@ cnoremap Q q
 
 " Backup
 set noswapfile
+
+" Executing file
+autocmd FileType ruby nmap <F5> :!ruby %<cr>
