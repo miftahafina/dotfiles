@@ -9,7 +9,7 @@ syntax on
 colorscheme Tomorrow-Night
 set guifont=Menlo\ Regular:h18
 " set lines=35 columns=100
-set colorcolumn=90
+set colorcolumn=100
 set number
 set norelativenumber
 set showmatch
@@ -20,6 +20,9 @@ set cursorline
 " Key mapping
 let mapleader=" "
 map <leader>s :source ~/.vimrc<CR>
+
+" Numbering
+map <leader>r :set relativenumber!<CR>
 
 " Speed it up
 set hidden
@@ -69,6 +72,7 @@ map <C-j> :bprevious<CR>
 map <C-w> :bdelete<CR>
 map <C-q> :q<CR>
 map <C-Q> :q!<CR>
+map <C-t> :badd
 
 " Re-open
 nnoremap <Leader><Leader> :e#<CR>
@@ -107,4 +111,4 @@ cnoremap Q q
 set noswapfile
 
 " Executing file
-autocmd FileType ruby nmap <F5> :!ruby %<cr>
+autocmd FileType ruby nmap <F5> :!ruby %
