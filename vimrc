@@ -17,6 +17,9 @@ set wildmode=longest,list,full
 set wildmenu
 set cursorline
 
+" Language syntax
+map <C-S-l> :set syntax=
+
 " Key mapping
 let mapleader=" "
 map <leader>s :source ~/.vimrc<CR>
